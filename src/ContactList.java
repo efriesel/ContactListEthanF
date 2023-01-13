@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  * A class that stores subclasses of Person as a contact list.
  * The user is presented with a menu of options and may add, sort,
@@ -11,7 +14,11 @@
 
 public class ContactList
 {
-    // TODO: Create your array contacts
+    ArrayList<Person> contacts;
+
+    public ContactList() {
+        contacts = new ArrayList<Person>();
+    }
 
     // TODO: Write a Constructor
 
@@ -33,7 +40,9 @@ public class ContactList
      * to the contact list
      */
     public void addContact() {
-        // TODO: Complete the addContact method
+        Scanner s = new Scanner(System.in);
+        System.out.println("Please fill in the following information.\nFirst Name");
+        String firstName = s.nextLine();
     }
 
     /**
