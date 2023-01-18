@@ -29,9 +29,10 @@ public class ContactList
         System.out.println("3. List All Contacts By Last Name");
         System.out.println("4. List All Contacts By Phone Number");
         System.out.println("5. List All Students");
-        System.out.println("6. Search By First Name");
-        System.out.println("7. Search By Last Name");
-        System.out.println("8. Search by Phone Number");
+        System.out.println("6. List All Favorites");
+        System.out.println("7. Search By First Name");
+        System.out.println("8. Search By Last Name");
+        System.out.println("9. Search by Phone Number");
         System.out.println("0. Exit");
     }
 
@@ -41,7 +42,7 @@ public class ContactList
      */
     public void addContact() {
         Scanner s = new Scanner(System.in);
-        System.out.println("Select the type of contact to add:\n1. Student\n2. Family Member\n 3. Person");
+        System.out.println("Select the type of contact to add:\n1. Student\n2. Family Member\n3. Person");
         int selection = s.nextInt();
         s.nextLine();
         System.out.println("Please fill in the following information.\nFirst Name:");
@@ -73,9 +74,21 @@ public class ContactList
      * Loops through and prints all contacts
      */
     public void printContacts() {
-        System.out.println("Contacts");
+        System.out.println("Contacts:");
         for (Person p: contacts){
             System.out.println(p);
+        }
+    }
+
+    /**
+     * Loops through and prints all favorites
+     */
+    public void listFavorites(){
+        System.out.println("Favorites:");
+        for (Person p : contacts){
+            if (p.isFavorite()){
+                System.out.println(p);
+            }
         }
     }
 
@@ -136,7 +149,7 @@ public class ContactList
     }
 
     // TODO: Write searchByPhoneNumber
-    public ArrayList<Person> searchByPhoneNumber(Person phoneNumber){
+    public ArrayList<Person> searchByPhoneNumber(String phoneNumber){
         ArrayList<Person> search = new ArrayList<>();
         for (Person p : contacts){
             if (p.getPhoneNumber().equals(phoneNumber)){
@@ -174,7 +187,6 @@ public class ContactList
         s.nextLine();
 
         while (in != 0){
-            contacts.add(new Student("a", "b", "c", false, 8));
             if (in == 1)
                 addContact();
             else if (in == 2){
@@ -193,6 +205,9 @@ public class ContactList
                 listStudents();
             }
             else if (in == 6){
+                listFavorites();
+            }
+            else if (in == 7){
                 System.out.println("Enter a name:");
                 String name = s.nextLine();
                 ArrayList<Person> firsts = searchByFirstName(name);
@@ -204,7 +219,7 @@ public class ContactList
                         System.out.println(p);
                 }
             }
-            else if (in == 7){
+            else if (in == 8){
                 System.out.println("Enter a name:");
                 String name = s.nextLine();
                 ArrayList<Person> lasts = searchByLastName(name);
@@ -216,15 +231,15 @@ public class ContactList
                         System.out.println(p);
                 }
             }
-            else if (in == 8){
+            else if (in == 9){
                 System.out.println("Enter a name:");
                 String name = s.nextLine();
-                ArrayList<Person> nums = searchByFirstName(name);
-                if (nums == null){
+                ArrayList<Person> numbers = searchByPhoneNumber(name);
+                if (numbers == null){
                     System.out.println(name + " is not in the list.");
                 }
                 else {
-                    for (Person p : nums)
+                    for (Person p : numbers)
                         System.out.println(p);
                 }
             }
