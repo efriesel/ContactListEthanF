@@ -41,5 +41,7 @@ public class Person {
         return firstName + " " + lastName + " - #" + phoneNumber;
     }
 
-
+    public boolean isFavorite() {
+        return isFavorite;
+    }
 }

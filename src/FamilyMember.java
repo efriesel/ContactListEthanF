@@ -1,8 +1,8 @@
 public class FamilyMember extends Person{
     public String relation;
 
-    public FamilyMember(String firstName, String lastName, String phoneNumber, String relation) {
-        super(firstName, lastName, phoneNumber);
+    public FamilyMember(String firstName, String lastName, String phoneNumber, boolean isFavorite, String relation) {
+        super(firstName, lastName, phoneNumber, isFavorite);
         this.relation = relation;
     }
 
@@ -12,6 +12,6 @@ public class FamilyMember extends Person{
 
     @Override
     public String toString() {
-        return getFirstName() + " " + getLastName() + " - #" + getPhoneNumber() + " Relation: " + relation;
+        return getFirstName() + " " + getLastName() + " - #" + getPhoneNumber() + " Relation: " + relation + " Favorite: " + isFavorite();
     }
 }
