@@ -8,20 +8,21 @@ import java.util.Scanner;
  *
  * Created for Menlo School CS2
  *
- * @author: Ms. Namasivayam & Mr. Blick
+ * @author: Ms. Namasivayam & Mr. Blick & Ethan
  * @version: 2022-2023
  */
 
 public class ContactList
 {
+    //ArrayList instance variable for all contacts
     ArrayList<Person> contacts;
 
+    //Constructor will arraylist declaration
     public ContactList() {
         contacts = new ArrayList<Person>();
     }
 
-    // TODO: Write a Constructor
-
+    // this method will print out the menu
     public void printMenuOptions() {
         System.out.println("Menu: ");
         System.out.println("1. Add Contact");
@@ -122,7 +123,11 @@ public class ContactList
         }
     }
 
-    // TODO: Write searchByFirstName
+    /**
+     * This function will search for every contact will a matching firstName
+     * @param firstName
+     * @return an arraylist with every instance of the name (if any).
+     */
     public ArrayList<Person> searchByFirstName(String firstName){
         ArrayList<Person> search = new ArrayList<>();
         for (Person p : contacts){
@@ -135,7 +140,11 @@ public class ContactList
         return search;
     }
 
-    // TODO: Write searchByLastName
+    /**
+     * This function will search for every contact will a matching lastName
+     * @param lastName
+     * @return an arraylist with every instance of the name (if any).
+     */
     public ArrayList<Person> searchByLastName(String lastName){
         ArrayList<Person> search = new ArrayList<>();
         for (Person p : contacts){
@@ -148,7 +157,11 @@ public class ContactList
         return search;
     }
 
-    // TODO: Write searchByPhoneNumber
+    /**
+     * This function will search for every contact will a matching phoneNumber
+     * @param phoneNumber
+     * @return an arraylist with every instance of the number (if any).
+     */
     public ArrayList<Person> searchByPhoneNumber(String phoneNumber){
         ArrayList<Person> search = new ArrayList<>();
         for (Person p : contacts){
@@ -165,7 +178,6 @@ public class ContactList
      * Lists just the Student objects in the Contact List
      */
     public void listStudents() {
-        // TODO: Complete the listStudents method
         for (int i = 0; i < contacts.size(); i++){
             if (contacts.get(i) instanceof Student){
                 System.out.println(contacts.get(i));
@@ -185,7 +197,7 @@ public class ContactList
         Scanner s = new Scanner(System.in);
         int in = s.nextInt();
         s.nextLine();
-
+        // Uses a while loop for continuing inputs, as well as a c style case switch statement using prebuilt function
         while (in != 0){
             if (in == 1)
                 addContact();
@@ -243,6 +255,7 @@ public class ContactList
                         System.out.println(p);
                 }
             }
+            // ask for input again at the end for iteration, as well as add a s.nextLine() so the user can look at their inputs before moving on to the next line
             s.nextLine();
             printMenuOptions();
             in = s.nextInt();
@@ -251,7 +264,7 @@ public class ContactList
 
     }
 
-
+    //main method for the whole contact list
     public static void main(String[] args)
     {
         ContactList cl = new ContactList();

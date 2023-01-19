@@ -11,13 +11,14 @@ public class Person {
 
 
 
-
+    // instance variables
     private String firstName;
     private String lastName;
     private String phoneNumber;
 
     private boolean isFavorite;
 
+    // constructor for the Person class
     public Person(String firstName, String lastName, String phoneNumber, boolean isFavorite) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -25,6 +26,7 @@ public class Person {
         this.isFavorite = isFavorite;
     }
 
+    //getter functions for each instance variable
     public String getFirstName() {
         return firstName;
     }
@@ -37,11 +39,11 @@ public class Person {
         return phoneNumber;
     }
 
-    public String toString(){
-        return firstName + " " + lastName + " - #" + phoneNumber;
-    }
-
     public boolean isFavorite() {
         return isFavorite;
+    }
+    //to string function that will be overrided twice
+    public String toString(){
+        return firstName + " " + lastName + " - #" + phoneNumber;
     }
 }
