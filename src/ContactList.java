@@ -8,7 +8,7 @@ import java.util.Scanner;
  *
  * Created for Menlo School CS2
  *
- * @author: Ms. Namasivayam & Mr. Blick & Ethan
+ * @author: Ms. Namasivayam & Mr. Blick & Ethan Friesel
  * @version: 2022-2023
  */
 

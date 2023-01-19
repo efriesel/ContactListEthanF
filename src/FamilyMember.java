@@ -3,7 +3,7 @@
  *
  * Created for Menlo School CS2
  *
- * @author: Ethan
+ * @author: Ethan Friesel
  * @version: 2022-2023
  */
 public class FamilyMember extends Person{

@@ -3,7 +3,7 @@
  *
  * Created for Menlo School CS2
  *
- * @author: Ms. Namasivayam & Mr. Blick
+ * @author: Ms. Namasivayam & Mr. Blick & Ethan Friesel
  * @version: 2022-2023
  */
 
@@ -44,6 +44,6 @@ public class Person {
     }
     //to string function that will be overrided twice
     public String toString(){
-        return firstName + " " + lastName + " - #" + phoneNumber;
+        return firstName + " " + lastName + " - #" + phoneNumber + " Favorite: " + isFavorite;
     }
 }

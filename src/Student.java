@@ -3,7 +3,7 @@
  *
  * Created for Menlo School CS2
  *
- * @author: Ms. Namasivayam & Mr. Blick & Ethan
+ * @author: Ms. Namasivayam & Mr. Blick & Ethan Friesel
  * @version: 2022-2023
  */
 //Class with inheritance from Person Class
