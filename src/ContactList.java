@@ -129,10 +129,14 @@ public class ContactList
      * @return an arraylist with every instance of the name (if any).
      */
     public ArrayList<Person> searchByFirstName(String firstName){
+        sort(0);
         ArrayList<Person> search = new ArrayList<>();
         for (Person p : contacts){
             if (p.getFirstName().equals(firstName)){
                 search.add(p);
+            }
+            else if (!search.isEmpty()){
+                return search;
             }
         }
         if (search.isEmpty())
@@ -146,10 +150,14 @@ public class ContactList
      * @return an arraylist with every instance of the name (if any).
      */
     public ArrayList<Person> searchByLastName(String lastName){
+        sort(1);
         ArrayList<Person> search = new ArrayList<>();
         for (Person p : contacts){
             if (p.getLastName().equals(lastName)){
                 search.add(p);
+            }
+            else if (!search.isEmpty()){
+                return search;
             }
         }
         if (search.isEmpty())
@@ -163,10 +171,14 @@ public class ContactList
      * @return an arraylist with every instance of the number (if any).
      */
     public ArrayList<Person> searchByPhoneNumber(String phoneNumber){
+        sort(2);
         ArrayList<Person> search = new ArrayList<>();
         for (Person p : contacts){
             if (p.getPhoneNumber().equals(phoneNumber)){
                 search.add(p);
+            }
+            else if (!search.isEmpty()){
+                return search;
             }
         }
         if (search.isEmpty())

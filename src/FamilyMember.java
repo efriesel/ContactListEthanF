@@ -14,7 +14,7 @@ public class FamilyMember extends Person{
         super(firstName, lastName, phoneNumber, isFavorite);
         this.relation = relation;
     }
-
+    //getter function for the relation instance variable
     public String getRelation() {
         return relation;
     }
